@@ -12,7 +12,6 @@ d = ImageDraw.Draw(img)
 # フォントと大きさを指定する
 # もし指定するフォントがなかったらデフォルトを使う
 try:
-    # font = ImageFont.truetype("MPLUS1thin", 18)
     font = ImageFont.truetype("MPLUS1-VariableFont_wght.ttf", 18)
 except IOError:
     font = ImageFont.load_default()
