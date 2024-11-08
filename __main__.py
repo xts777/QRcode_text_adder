@@ -7,7 +7,6 @@ class TextAdder():
         self.box_size_getter()
         self.text_placer()
 
-    # @staticmethod
     def opener(self) -> None:
         from PIL import Image, ImageDraw
         self.img = Image.open(self.image_path)
