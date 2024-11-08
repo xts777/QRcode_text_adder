@@ -1,7 +1,6 @@
 class TextAdder():
     def __init__(self, image_path, font, fontsize, font_color, text) -> None:
         self.image_path = image_path
-        print("constructer")
         self.opener()
         self.font_setter(font, fontsize, font_color)
         self.text_setter(text)
@@ -10,13 +9,11 @@ class TextAdder():
 
     # @staticmethod
     def opener(self) -> None:
-        print("opener")
         from PIL import Image, ImageDraw
         self.img = Image.open(self.image_path)
         self.draw = ImageDraw.Draw(self.img)
     
     def font_setter(self, font: str, fontsize: int, font_color: tuple):
-        print("font_setter")
         from PIL import ImageFont
         self.font_color = font_color
         try:
@@ -26,7 +23,6 @@ class TextAdder():
             print("Font not found. Using default font.")
 
     def text_setter(self, text: str):
-        print("text_setter")
         text: str = text.replace(".png", "")
         self.text = text
         self.textboxsize = self.draw.textbbox((0,0), self.text, font= self.font)
@@ -39,13 +35,11 @@ class TextAdder():
             self.img_height = self.img.height
 
     def text_placer(self):
-        print("text_placer")
         if self.text:
             self.text_x = (self.img_width - self.text_width) / 2
-            self.text_y = (self.img_height - self.text_height) - 20
+            self.text_y = (self.img_height - self.text_height) - 15
     
     def text_writter(self):
-        print("text_writter")
         self.draw.text((self.text_x, self.text_y), self.text, font=self.font, fill=self.font_color)
         
     def save_image(self, save_path):
@@ -57,7 +51,7 @@ class TextAdder():
         self.save_image(savepath)
 
 if __name__ == "__main__":
-    t = TextAdder("24_FL_QR_Insta.png", font="MPLUS1-VariableFont_wght.ttf", fontsize=18, font_color=(0,0,0), text="aa")
+    t = TextAdder("24_FL_QR_Insta.png", font="MPLUS1-VariableFont_wght.ttf", fontsize=18, font_color=(0,0,0), text="HogeHoge")
     t.runner("_24_FL_QR_Insta.png")
 
         
