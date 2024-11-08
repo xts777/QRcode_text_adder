@@ -14,7 +14,6 @@ d = ImageDraw.Draw(img)
 try:
     # font = ImageFont.truetype("MPLUS1thin", 18)
     font = ImageFont.truetype("MPLUS1-VariableFont_wght.ttf", 18)
-    font.font_variant = {'wght': 300}
 except IOError:
     font = ImageFont.load_default()
     print("Font not found. Using default font.")
